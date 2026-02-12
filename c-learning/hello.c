@@ -69,20 +69,35 @@ void write_to_file(char *text_to_write) {
 }
 
 int main() {
-    char name[50];
+    char input[50];
+    char *commands[] = {"exit", "help", "pause", "reset"};
+    int num_commands = 4;
     print_header();
     while(1) {
+        
         print("Enter your name: ", "red");
         print("Enter your name: ", "green");
         print("Enter your name: ", "cyan");
-        fgets(name, 50, stdin);
-        name[strcspn(name, "\n")] = 0;
-        if (strcmp(name, "exit") == 0) {
-            printf("User choose to exit \n");
-            exit(0);
-        }
-        printf("Hello, %s \n", name);
-        write_to_file(name);
+        fgets(input, 50, stdin);
+        input[strcspn(input, "\n")] = 0;
+        int match_index = -1;
+            for (int i = 0; i < num_commands; i++) {
+                if (strcmp(input, commands[i]) == 0) {
+                    match_index = i;
+                    break;
+                }
+            }
+
+            // 3. Do "X thing" based on the match
+            if (match_index == 0) {
+                exit(0);
+            } else if (match_index == 1) {
+                print_header();
+            } else {
+                printf("Command not recognized.\n");
+            }
+        printf("Hello, %s \n", input);
+        write_to_file(input);
     }
     return 0;
 }
