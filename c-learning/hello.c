@@ -19,10 +19,6 @@ void print_header() {
     printf("----------------------------------\n");
 }
 
-
-void logging(char text, char color) {
-}
-
 void print(char *text, char *color) {
     if (strcmp(color, "red") == 0) {
         printf("%s%s%s\n", ANSI_COLOR_RED, text, ANSI_COLOR_RESET);
