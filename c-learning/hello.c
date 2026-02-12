@@ -33,6 +33,41 @@ void print(char *text, char *color) {
     }
 }
 
+int file_exists(const char *filename) {
+    FILE *file;
+    if ((file = fopen(filename, "r"))) {
+        fclose(file);
+        return 1;
+    }
+    return 0;
+}
+
+
+void write_to_file(char *text_to_write) {
+    FILE *fptr;
+    if (file_exists("output.txt")) {
+        fptr = fopen("output.txt", "a");
+    } else {
+        fptr = fopen("output.txt", "w");
+    }
+
+    // Check if the file was opened successfully
+    if (fptr == NULL) {
+        printf("Error opening file for writing!\\n");
+        exit(1); // Exit program with an error status
+    }
+
+    // Write the string to the file
+    fprintf(fptr, "\n");
+    fprintf(fptr, "%s", text_to_write);
+
+    // Close the file
+    fclose(fptr);
+
+    printf("Data successfully written to output.txt \n");
+
+}
+
 int main() {
     char name[50];
     print_header();
@@ -47,6 +82,7 @@ int main() {
             exit(0);
         }
         printf("Hello, %s \n", name);
+        write_to_file(name);
     }
     return 0;
 }
