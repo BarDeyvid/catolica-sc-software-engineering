@@ -8,17 +8,9 @@ This repository contains projects, notes, exercises, and academic work developed
 
 ---
 
-## Structure
-
-```
-software-engineering-degree/
-```
-
----
-
 ## Goals
 
-* Track my academic progress
+* Track our academic progress
 * Build a long-term technical portfolio
 * Document learning and key concepts
 * Store relevant projects and experiments
