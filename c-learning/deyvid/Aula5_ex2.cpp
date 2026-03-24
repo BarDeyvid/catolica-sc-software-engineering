@@ -10,11 +10,9 @@ int main(void) {
 
     if (numero < 0) {
         printf("O valor e negativo \n");
+    } else if (numero > 0) {
+        printf("O valor e positivo \n");
     } else {
-        if (numero > 0) {
-            printf("O valor e positivo \n");
-        } else {
-            printf("O valor e neutro \n");
-        }
+        printf("O valor e neutro \n");
     }
 }
