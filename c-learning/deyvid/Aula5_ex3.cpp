@@ -8,11 +8,21 @@ int main(void) {
     scanf("%c", &letra);
     fflush(stdin);
 
-    if (letra == 'F' || letra == 'f') {
-        printf("O Sexo e feminino \n");
-    } else if (letra == 'M' || letra == 'm') {
-        printf("O Sexo e Masculino \n");
-    } else {
-        printf("O Sexo e invalido \n");
+    switch (letra)
+    {
+    case 'f':
+        printf("Feminino\n");
+        break;
+    case 'F':
+        printf("Feminino\n");
+        break;
+    case 'm':
+        printf("Masculino\n");
+        break;
+    case 'M':
+        printf("Masculino\n");
+        break;
+    default:
+        break;
     }
 }
