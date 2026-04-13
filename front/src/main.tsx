@@ -8,7 +8,7 @@ import Docs from './Docs.tsx'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-    <header className='flex bg-blue-300 p-4 rounded-md justify-around items-center'>
+    <header className='flex bg-blue-300 p-4 justify-around items-center'>
       <Link to="/">
       <h1 className='text-2xl font-bold'>Zorin OS</h1>
       </Link>
