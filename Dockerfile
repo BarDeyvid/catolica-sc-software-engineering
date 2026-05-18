@@ -1,9 +1,9 @@
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 WORKDIR /app
 
 # Install dependencies and build
-COPY package.json package-lock.json* ./
-RUN npm install --legacy-peer-deps || true
+COPY package*.json ./
+RUN if [ -f package-lock.json ]; then npm ci --legacy-peer-deps; else npm install --legacy-peer-deps; fi
 COPY . .
 RUN npm run build
 
